@@ -62,7 +62,7 @@ conn = sqlite3.connect("template.db")
 c = conn.cursor()
 
 #Get the workbook, and create the table for the first sheet
-wb = openpyxl.load_workbook(filename='Sample Excel Files/testExcel.xlsx')
+wb = openpyxl.load_workbook(filename='Sample Excel Files/TM_Heating & Cooling.xlsx')
 
 for ws in wb.worksheets:
 	templateSheet(ws)
