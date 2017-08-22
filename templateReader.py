@@ -5,10 +5,6 @@ import os
 
 #Create the cell function
 def templateCell(s,sn,col,r):
-	try:
-		os.remove("template.db")
-	except OSError:
-		pass
 	conn = sqlite3.connect("template.db")
 	c = conn.cursor()
 	cellRef = col + r
@@ -24,10 +20,6 @@ def templateCell(s,sn,col,r):
 	conn.close()
 
 def templateSheet(s):
-	try:
-		os.remove("template.db")
-	except OSError:
-		pass
 	#This class will call the template cell class from its method, and from init will create the sql table
 	conn = sqlite3.connect("template.db")
 	c = conn.cursor()
