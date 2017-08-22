@@ -1,4 +1,4 @@
-#Need this packages
+#Need these packages
 import openpyxl #For interacting with Excel
 import sys #For interacting with the OS
 import time #For logging
