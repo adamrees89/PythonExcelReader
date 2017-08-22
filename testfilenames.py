@@ -7,12 +7,12 @@ class templateReaderFunctionTest(unittest.TestCase):
 	
 	def test_Excelfile(self):
 		""" Class initialiser """
-		f='Sample Excel Files/TM_Heating & Cooling.xlsx'
+		f='Sample Excel Files/testExcel.xlsx'
 		try:
 			wb = openpyxl.load_workbook(filename=f)
 			for ws in wb.worksheets:
 				templateReader.templateSheet(ws)
-		except ExceptionType:
+		except Exception:
 			self.fail("templateReader.templateSheet() threw an exception with the sample .xlsx file:".format(f))
 
 	def test_Wordfile(self):
@@ -22,7 +22,7 @@ class templateReaderFunctionTest(unittest.TestCase):
 			wb = openpyxl.load_workbook(filename=f)
 			for ws in wb.worksheets:
 				templateReader.templateSheet(ws)
-		except ExceptionType:
+		except InvalidFileException:
 			self.fail("templateReader.templateSheet() threw an exception with the sample .docx file:".format(f))
 
 
