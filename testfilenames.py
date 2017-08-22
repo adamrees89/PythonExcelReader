@@ -1,5 +1,6 @@
 import unittest
 import templateReader
+import openpyxl
 
 class templateReaderFunctionTest(unittest.TestCase):
 	""" Class doc """
