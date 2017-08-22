@@ -10,6 +10,11 @@ os.makedirs("logs",exist_ok=True)
 logging.basicConfig(filename='logs/ExcelReader.log',level=logging.DEBUG)
 logging.info('\nDate and Time:\n' + now + '\n-------------------------------\n')
 
+	try:
+		os.remove("template.db")
+	except OSError:
+		pass
+
 wb = openpyxl.load_workbook(filename='Sample Excel Files/TM_Heating & Cooling.xlsx')
 
 for ws in wb.worksheets:
