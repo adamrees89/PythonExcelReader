@@ -1,6 +1,7 @@
 import unittest
 import templateReader
 import openpyxl
+from openpyxl.utils.exceptions import InvalidFileException
 
 class templateReaderFunctionTest(unittest.TestCase):
 	""" Class doc """
@@ -22,9 +23,12 @@ class templateReaderFunctionTest(unittest.TestCase):
 			wb = openpyxl.load_workbook(filename=f)
 			for ws in wb.worksheets:
 				templateReader.templateSheet(ws)
-		except InvalidFileException:
-			self.fail("templateReader.templateSheet() threw an exception with the sample .docx file:".format(f))
-
+		except openpyxl.utils.exceptions.InvalidFileException:
+			pass
+		except Exception as e:
+			self.fail('Unexpected exception raised:', e)
+		else:
+			self.fail('Exception not raised')
 
 def main():
 	unittest.main()
