@@ -14,7 +14,7 @@ def templateCell(s,sn,col,r):
     fbold = int(s[cellRef].font.bold == 'true')
     fital = int(s[cellRef].font.italic == 'true')
     ccolour = s[cellRef].fill.start_color.index
-    data=[cellRef, val, fname, fsize, fbold, fital, ccolour]
+    data = [cellRef, val, fname, fsize, fbold, fital, ccolour]
     c.execute("INSERT INTO "+sn+" VALUES (?,?,?,?,?,?,?)", data)
     conn.commit()
     conn.close()
