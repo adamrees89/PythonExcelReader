@@ -1,5 +1,6 @@
 import unittest
 import templateReader
+import os
 import openpyxl
 from openpyxl.utils.exceptions import InvalidFileException
 
@@ -9,6 +10,11 @@ class templateReaderFunctionTest(unittest.TestCase):
     def test_Excelfile(self):
         """ Class initialiser """
         f = 'Sample Excel Files/testExcel.xlsx'
+        try:
+            os.remove("template.db")
+        except OSError:
+            pass
+
         try:
             wb = openpyxl.load_workbook(filename=f)
             for ws in wb.worksheets:
