@@ -28,8 +28,8 @@ def templateSheet(s):
     c = conn.cursor()
     sn = s.title
     sn = sn.replace(" ", "").replace("+", "").replace("-", "")\
-         .replace("/", "").replace("_", "").replace("&", "")\
-         .replace("%", "")
+        .replace("/", "").replace("_", "").replace("&", "")\
+        .replace("%", "")
     column2 = 'Cell'
     column3 = 'Value'
     column4 = 'Font_Name'
@@ -41,10 +41,10 @@ def templateSheet(s):
     fieldtype2 = 'TEXT'
     try:
         c.execute('CREATE TABLE {tn}({c2}{ft2}, {c3}{ft2}, {c4}{ft2},'
-         ' {c5}{ft2}, {c6}{ft1}, {c7}{ft1}, {c8}{ft1})'
-         .format(tn=sn, ft1=fieldtype1, ft2=fieldtype2, c2=column2, 
-         c3=column3, c4=column4, c5=column5, c6=column6, c7=column7, 
-         c8=column8))
+        ' {c5}{ft2}, {c6}{ft1}, {c7}{ft1}, {c8}{ft1})'
+        .format(tn=sn, ft1=fieldtype1, ft2=fieldtype2, c2=column2, 
+        c3=column3, c4=column4, c5=column5, c6=column6, c7=column7, 
+        c8=column8))
     except sqlite3.Error:
         print('There was a problem with the sql database, is the'
          ' database already open, or does the sheet already exist?')
