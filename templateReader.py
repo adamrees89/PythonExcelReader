@@ -19,6 +19,7 @@ def templateCell(s,sn,col,r):
     conn.commit()
     conn.close()
 
+
 '''This function will call the template cell class from its method,
 and from init will create the sql table'''
 
@@ -27,8 +28,8 @@ def templateSheet(s):
     c = conn.cursor()
     sn = s.title
     sn = sn.replace(" ", "").replace("+", "").replace("-", "") \
-        .replace("/", "").replace("_", "").replace("&", "") \
-        .replace("%", "")
+         .replace("/", "").replace("_", "").replace("&", "") \
+         .replace("%", "")
     column2 = 'Cell'
     column3 = 'Value'
     column4 = 'Font_Name'
