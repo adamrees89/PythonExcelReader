@@ -1,12 +1,16 @@
 language: python
 python:
   - "3.6"
+
 # command to install dependencies
 install: 
   - pip install -r requirements.txt
   - pip install python-coveralls
+  - pip install coverage
+  
 # command to run tests
-script: python -m unittest discover
+script: coverage run -m unittest discover
+
 #Coveralls
 after_success:
   - coveralls
